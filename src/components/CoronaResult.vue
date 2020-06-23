@@ -1,5 +1,6 @@
 <template>
   <div class="corona-results-card mt-5">
+    <!-- en prop sedan tidigare -->
     <div class="row" v-if="showFilter"></div>
     <div class="row">
       <div class="col-md-4 mb-4" v-for="result in results" :key="result.country_name">
@@ -41,6 +42,7 @@ export default {
       results: {}
     };
   },
+  // Prop som finns sedan tidigare.
   props: ["showFilter"],
   methods: {
     getWorldCoronaData: function() {

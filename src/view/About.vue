@@ -1,8 +1,10 @@
 <template>
   <div class="about">
     <p>Gjord av: {{$store.getters.getName}}</p>
-    <h1>Om Corona</h1>
     <h2>Info om Covid-19</h2>
+
+    <!-- lagt till en prop -->
+    <p>{{ title }}</p>
     <div class="box">
       <input type="checkbox" v-model="someBoolean" />
       {{ someBoolean }}
@@ -48,6 +50,8 @@
 export default {
   button: "text",
   name: "Box",
+  // Lagt till prop.
+  props: ["title"],
   data() {
     return {
       someBoolean: false,

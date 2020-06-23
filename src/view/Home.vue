@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h2>Corona Updates</h2>
-
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
