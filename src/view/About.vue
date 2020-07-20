@@ -3,10 +3,10 @@
     <p>Gjord av: {{$store.getters.getName}}</p>
     <h2>Info om Covid-19</h2>
 
-    <!-- lagt till en prop -->
-    <my-button name="Share"></my-button>
-    <my-button name="Like"></my-button>
-    <my-button name="Comment"></my-button>
+    <!-- lagt till en props -->
+    <my-button name="Share" :handleClick="shareMe"></my-button>
+    <my-button name="Like" :handleClick="likeMe"></my-button>
+    <my-button name="Comment" :handleClick="commentMe"></my-button>
 
     <div class="box">
       <input type="checkbox" v-model="someBoolean" />
@@ -50,7 +50,8 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
+import Button from "@/components/Button";
+
 export default {
   components: {
     "my-button": Button
@@ -64,6 +65,16 @@ export default {
       someBoolean: false,
       pressedEnter() {
         alert("you pressed the enter key");
+      },
+      // la till props med handleClick.
+      shareMe() {
+        return alert("Shared");
+      },
+      likeMe() {
+        return alert("Liked");
+      },
+      commentMe() {
+        return alert("Nice try!");
       }
     };
   }
