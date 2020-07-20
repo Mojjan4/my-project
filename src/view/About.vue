@@ -4,7 +4,10 @@
     <h2>Info om Covid-19</h2>
 
     <!-- lagt till en prop -->
-    <p>{{ title }}</p>
+    <my-button name="Share"></my-button>
+    <my-button name="Like"></my-button>
+    <my-button name="Comment"></my-button>
+
     <div class="box">
       <input type="checkbox" v-model="someBoolean" />
       {{ someBoolean }}
@@ -47,11 +50,15 @@
 </template>
 
 <script>
+import Button from "./Button.vue";
 export default {
+  components: {
+    "my-button": Button
+  },
   button: "text",
   name: "Box",
   // Lagt till prop.
-  props: ["title"],
+  props: ["someName", "handleClick"],
   data() {
     return {
       someBoolean: false,
